@@ -1,0 +1,149 @@
+<html>
+  <head>
+    <title>Kyle Saburao</title>
+    <style>
+      html {
+        height: 100vh;
+      }
+
+      body {
+        height: 100%;
+        margin: 0;
+        align-items: center;
+        background-color: black;
+        display: flex;
+        font-family: arial;
+        justify-content: center;
+      }
+
+      p {
+        text-align: center;
+        padding: 0.25rem;
+        margin: 0;
+      }
+
+      .small-italic {
+        font-size: smaller;
+        font-style: italic;
+      }
+      
+      .small-text {
+        font-size: smaller;
+      }
+
+      .no-select {
+        -webkit-user-select: none;
+        user-select: none;
+      }
+
+      .items {
+        transition: all 0.5s linear;
+        align-items: center;
+        background-color: white;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 1.25rem;
+        width: 15em;
+        row-gap: 0.25rem;
+      }
+
+      h2 {
+        margin: 0;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .hidden2 {
+        opacity: 0;
+      }
+    </style>
+
+    <style>
+      .fade {
+        opacity: 0;
+        animation-name: shownum;
+        animation-duration: 0.75s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards;
+      }
+
+      .fade-slow {
+        opacity: 0;
+        animation-name: shownum;
+        animation-duration: 0.5s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes shownum {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      .ok {
+        position: absolute;
+        opacity: 0.01;
+        color: black;
+        z-index: -1;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault()
+      );
+
+      window.onload = () => {
+        const loadTime = (new Date()).toLocaleString([], {timeZone: "UTC"});
+        const preload = document.getElementById("pre");
+        preload.innerText = `${loadTime} UTC`;
+
+        const elements = document.getElementsByClassName("element");
+        for (const element of elements) {
+          element.classList.add("ok");
+        }
+
+        const textElement = document.getElementById("text");
+        const textElement2 = document.getElementById("text2");
+        fetch("REDACTED").then(async (response) => {
+          const responseJson = await response.json();
+          const { clientIp = '', cfCountry = '', visitCount = 1, otherNetworkVisitors = 0 } = responseJson;
+          if (clientIp) {
+            textElement.textContent = `${clientIp} from ${cfCountry}, you've been here ${visitCount} time${visitCount === 1 ? '' : 's'}.`;
+          }
+
+          if (otherNetworkVisitors === 0) {
+            textElement2.textContent = `You are the only person I can tell who visited from your household or business.`;
+          } else if (otherNetworkVisitors === 1) {
+            textElement2.textContent = `There is at least 1 other person or device who visited from your household or business.`;
+          } else {
+            textElement2.textContent = `There are at least ${otherNetworkVisitors} other people or devices who visited from your household or business.`;
+          }
+        });
+      };
+    </script>
+  </head>
+
+  <body>
+    <div class="element">
+      <h1 class="no-select">Kyle Saburao</h1>
+      <p class="no-select">This is a website about Kyle Saburao</p>
+      <p id="pre" class="no-select" />
+    </div>
+
+    <div class="items fade-slow no-select">
+      <h3>Hi</h3>
+      <p id="text" class="small-text">&nbsp;</p>
+      <p id="text2" class="small-text"></p>
+    </div>
+  </body>
+</html>
