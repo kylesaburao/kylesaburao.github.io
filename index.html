@@ -3,11 +3,47 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-      const destination = new URL("REDACTED");
-      destination.search = window.location.search;
-      const redirectDelay = 1500 + (Math.random() * 0.5 - 0.25) * 1000;
-      window.setTimeout(() => window.location.replace(destination), redirectDelay);
+    <script defer>
+      const options = [
+        'Tracking your visit...',
+        'Monitoring your activity...',
+        'Noting your presence...',
+        'Correlating your profile...',
+        'Assessing your activity...'
+      ];
+
+      const searchParams = new URLSearchParams(window.location.search);
+      if (searchParams.getAll('fbclid').some((value) => value !== '')) {
+        options.push('Tracing visit from Instagram...');
+      }
+
+      const selected = options[Math.floor(Math.random() * options.length)];
+
+      window.onload = () => {
+        // Hi, the website itself doesn't track; Cloudflare does and you can't bypass that.
+        const statusMessage = document.querySelector('#status-message');
+        statusMessage.textContent = selected;
+
+        const destination = new URL(__REDIRECT_URL_JSON__);
+        destination.search = window.location.search;
+        const redirectDelay = 1500 + (Math.random() * 0.5 - 0.25) * 1000;
+        const transitionDuration = 100;
+        
+        document.documentElement.style.setProperty('--final-background-color', '#202326');
+        
+        // Animate background outside Linktree's mobile viewport
+        if (!window.matchMedia('(max-width: 767px)').matches) {
+          window.setTimeout(() => {
+              document.documentElement.classList.add('redirecting');
+              document.body.classList.add('redirecting');
+            },
+            redirectDelay - transitionDuration
+          );
+        }
+
+        // Redirect
+        window.setTimeout(() => window.location.replace(destination), redirectDelay);
+      };
     </script>
     <title>Redirecting...</title>
     <style>
@@ -15,31 +51,46 @@
       body {
         margin: 0;
         min-height: 100%;
-        background: #0d0f14;
+        background-color: #0d0f14;
+        transition: background-color 150ms ease-out;
+      }
+      html.redirecting,
+      body.redirecting {
+        background-color: var(--final-background-color);
       }
       body {
         display: grid;
         place-items: center;
         min-height: 100vh;
         font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        user-select: none;
       }
       .redirect-status {
-        display: grid;
-        justify-items: center;
+        display: flex;
+        align-items: center;
         gap: 0.875rem;
+        box-sizing: border-box;
+        width: fit-content;
+        max-width: 100%;
+        padding-inline: clamp(1.25rem, 5vw, 2rem);
         color: #f7f7f7;
-        text-align: center;
+        text-align: left;
       }
       .spinner {
-        width: 2rem;
-        height: 2rem;
-        border: 2px solid rgb(247 247 247 / 25%);
+        flex: none;
+        align-self: flex-start;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-top: 0.25rem;
+        border: 3px solid rgb(247 247 247 / 25%);
         border-top-color: #f7f7f7;
+        border-bottom-color: #f7f7f7;
         border-radius: 50%;
         animation: spin 800ms linear infinite;
       }
       p {
         margin: 0;
+        min-width: 0;
         font-size: clamp(1.5rem, 4vw, 1.75rem);
         font-weight: 700;
         letter-spacing: -0.035em;
@@ -59,7 +110,7 @@
   <body>
     <section class="redirect-status" aria-live="polite">
       <div class="spinner" aria-hidden="true"></div>
-      <p>Your visit has been tracked...</p>
+      <p id="status-message">‎ </p>
     </section>
   </body>
 </html>

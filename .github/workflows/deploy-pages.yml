@@ -1,0 +1,79 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Build Pages artifact
+        env:
+          REDIRECT_URL: ${{ vars.REDIRECT_URL }}
+        run: |
+          node <<'NODE'
+          const fs = require("node:fs");
+          const path = require("node:path");
+
+          let redirect_url;
+          try {
+            redirect_url = new URL(process.env.REDIRECT_URL);
+          } catch {
+            throw new Error("REDIRECT_URL must be a non-empty HTTPS URL.");
+          }
+
+          if (
+            redirect_url.protocol !== "https:" ||
+            !redirect_url.hostname ||
+            redirect_url.username ||
+            redirect_url.password
+          ) {
+            throw new Error("REDIRECT_URL must be a non-empty HTTPS URL without credentials.");
+          }
+
+          const placeholder = "__REDIRECT_URL_JSON__";
+          const source = fs.readFileSync("index.html", "utf8");
+          if (source.split(placeholder).length - 1 !== 1) {
+            throw new Error("Expected exactly one redirect URL placeholder.");
+          }
+
+          fs.mkdirSync("_site");
+          fs.writeFileSync(
+            path.join("_site", "index.html"),
+            source.replace(placeholder, JSON.stringify(redirect_url.href))
+          );
+          fs.copyFileSync("CNAME", path.join("_site", "CNAME"));
+          NODE
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
