@@ -6,30 +6,60 @@
     <script>
       const destination = new URL("REDACTED");
       destination.search = window.location.search;
-      window.location.replace(destination);
+      const redirectDelay = 1500 + (Math.random() * 0.5 - 0.25) * 1000;
+      window.setTimeout(() => window.location.replace(destination), redirectDelay);
     </script>
-    <meta http-equiv="refresh" content="0; url=REDACTED">
-    <title>Loading...</title>
+    <title>Redirecting...</title>
     <style>
       html,
       body {
         margin: 0;
         min-height: 100%;
-        background: #222326;
+        background: #0d0f14;
+      }
+      body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      }
+      .redirect-status {
+        display: grid;
+        justify-items: center;
+        gap: 0.875rem;
+        color: #f7f7f7;
+        text-align: center;
+      }
+      .spinner {
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid rgb(247 247 247 / 25%);
+        border-top-color: #f7f7f7;
+        border-radius: 50%;
+        animation: spin 800ms linear infinite;
       }
       p {
-        color: #222427;
+        margin: 0;
+        font-size: clamp(1.5rem, 4vw, 1.75rem);
+        font-weight: 700;
+        letter-spacing: -0.035em;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .spinner {
+          animation: none;
+        }
       }
     </style>
   </head>
   <body>
-    <section>
-      <p>
-        Important note:
-        - Users are advised to visit the website directly through their browser
-        to access the website in the richest content experience possible. Only actual human-initiated
-        access through a real web browser can load the website properly.
-      </p>
+    <section class="redirect-status" aria-live="polite">
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Your visit has been tracked...</p>
     </section>
   </body>
 </html>
