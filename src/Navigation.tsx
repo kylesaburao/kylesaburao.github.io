@@ -5,7 +5,6 @@ export default function Navigation() {
   return (
     <Navbar bg="dark" variant="dark" className="">
       <Container>
-        <Navbar.Brand>Kyle Saburao</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
