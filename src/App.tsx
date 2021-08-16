@@ -15,7 +15,8 @@ function App() {
     ["Projects", <Projects />],
   ];
 
-  const [section, setSection] = useState<string>(options[0][0] as string);
+  const DEFAULT_OPTION = "Home";
+  const [section, setSection] = useState<string>(DEFAULT_OPTION);
 
   const optionMap = options.reduce((accum, [key, element]) => {
     (accum as { string: React.ComponentType<any> })[key as string] = element;
@@ -26,7 +27,7 @@ function App() {
   return (
     <>
       <Navigation options={Object.keys(optionMap)} setCurrent={setSection} />
-      <Container id="content">{optionMap[section as string]}</Container>
+      <Container id="content">{optionMap[section]}</Container>
     </>
   );
 }

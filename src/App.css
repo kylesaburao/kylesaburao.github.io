@@ -44,3 +44,7 @@ img {
 #content {
   padding: 2em;
 }
+
+.item-card {
+  width: 25em important; 
+}
