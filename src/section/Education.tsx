@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Col, Row, Card } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 
+import CardItem from "../CardItem";
 import sfuImage from "../img/sfu.jpg";
 
 export default function Education() {
@@ -13,14 +14,10 @@ export default function Education() {
         <Container>
           <Row>
             <Col md="auto">
-              <Card style={{ width: "30em" }}>
-                <Card.Img variant="top" src={sfuImage} />
-                <Card.Header>
-                  <h4>Simon Fraser University</h4>
-                  <p>B.Sc. Software Systems, School of Computing Science</p>
-                  <em>(2017 - Present)</em>
-                </Card.Header>
-                <Card.Body>
+              <CardItem
+                title="Simon Fraser University"
+                description="B.Sc. Software Systems, School of Computing Science"
+                body={
                   <ul>
                     <li>3.92/4.33 CGPA</li>
                     <li>Dean's Honour Roll & Open Scholarship</li>
@@ -31,8 +28,10 @@ export default function Education() {
                       </p>
                     </li>
                   </ul>
-                </Card.Body>
-              </Card>
+                }
+                image={sfuImage}
+                date={"2017 - Present"}
+              ></CardItem>
             </Col>
           </Row>
         </Container>

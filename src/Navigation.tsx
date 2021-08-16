@@ -3,7 +3,7 @@ import { Container, Navbar, Nav } from "react-bootstrap";
 
 export default function Navigation({ options, setCurrent }) {
   return (
-    <Navbar bg="dark" variant="dark" className="">
+    <Navbar bg="dark" variant="dark" className="" fixed="top">
       <Container>
         <Navbar.Brand>Kyle Saburao</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

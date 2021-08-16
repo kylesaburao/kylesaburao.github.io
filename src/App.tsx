@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <Navigation options={Object.keys(optionMap)} setCurrent={setSection} />
-      <Container id="content">{optionMap[section]}</Container>
+      <Container id="content" className="pt-5 mt-4">{optionMap[section]}</Container>
     </>
   );
 }
