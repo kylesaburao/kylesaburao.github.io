@@ -7,27 +7,26 @@ import Experience from "./section/Experience";
 import Home from "./section/Home";
 import Projects from "./section/Projects";
 
-function toString(value: any): string {
-  return value.toString();
-}
-
 function App() {
-  const [section, setSection] = useState("home");
-
   const options = [
-    ("Home", (<Home />)),
-    ("Education", (<Education />)),
-    ("Experience", (<Experience />)),
-    ("Projects", (<Projects />)),
+    ["Home", <Home />],
+    ["Experience", <Experience />],
+    ["Education", <Education />],
+    ["Projects", <Projects />],
   ];
+
+  const [section, setSection] = useState<string>(options[0][0] as string);
+
+  const optionMap = options.reduce((accum, [key, element]) => {
+    (accum as { string: React.ComponentType<any> })[key as string] = element;
+
+    return accum;
+  }, {} as { string: React.ComponentType<any> });
 
   return (
     <>
-      <Navigation
-        options={Object.keys(navigationOptions)}
-        setCurrent={setSection}
-      />
-      <Container id="content">{navigationOptions[section as string]}</Container>
+      <Navigation options={Object.keys(optionMap)} setCurrent={setSection} />
+      <Container id="content">{optionMap[section as string]}</Container>
     </>
   );
 }

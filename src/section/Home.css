@@ -1,0 +1,9 @@
+.portrait {
+  border-radius: 50%;
+  width: 14em;
+  margin: 1em;
+}
+
+#title {
+  font-weight: bold;
+}

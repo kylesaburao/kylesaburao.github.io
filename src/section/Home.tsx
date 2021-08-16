@@ -1,5 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 import portrait from "../img/me.jpg";
+import "./Home.css";
 
 export default function Home() {
   return (

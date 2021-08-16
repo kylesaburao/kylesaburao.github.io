@@ -37,22 +37,10 @@
   }
 }
 
-.portrait {
-  border-radius: 50%;
-  width: 14em;
-  margin: 1em;
-}
-
-#title {
-  font-weight: bold;
-}
-
-
 img {
   pointer-events: none;
 }
 
-#about {
-  margin-top: 2.5em;
-  margin-bottom: 2.5em;
+#content {
+  padding: 2em;
 }
