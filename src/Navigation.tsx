@@ -1,16 +1,25 @@
 import React from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
 
-export default function Navigation() {
+export default function Navigation({ options, setCurrent }) {
   return (
     <Navbar bg="dark" variant="dark" className="">
       <Container>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#experience">Experience</Nav.Link>
-            <Nav.Link href="#projects">Projects</Nav.Link>
-            <Nav.Link href="#education">Education</Nav.Link>
+            {options.map((option: string) => {
+              return (
+                <Nav.Link
+                  key={option}
+                  onClick={() => {
+                    setCurrent(option);
+                  }}
+                >
+                  {option}
+                </Nav.Link>
+              );
+            })}
           </Nav>
         </Navbar.Collapse>
       </Container>
