@@ -4,9 +4,9 @@ import { Card } from "react-bootstrap";
 export default function CardItem({
   title,
   description,
+  body,
   image = "",
   date = "",
-  body = [],
   width = "30em",
 }) {
   return (
@@ -17,8 +17,7 @@ export default function CardItem({
         <p>{description}</p>
         {date !== "" && <em>{date}</em>}
       </Card.Header>
-      {body.length > 0 && <Card.Body><ul>{body.map(x => <li key=></li>)}</ul></Card.Body>}
-      
+      <Card.Body>{body}</Card.Body>
     </Card>
   );
 }
