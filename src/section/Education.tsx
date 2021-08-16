@@ -20,13 +20,6 @@ export default function Education() {
                 body={
                   <ul>
                     <li>3.92/4.33 CGPA</li>
-                    <li>Dean's Honour Roll & Open Scholarship</li>
-                    <li>
-                      <p>
-                        Activities & Societies: Software Systems Student
-                        Society, HackThe90’s, Life Hacks, Hackademia
-                      </p>
-                    </li>
                   </ul>
                 }
                 image={sfuImage}

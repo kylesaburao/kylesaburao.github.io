@@ -18,26 +18,7 @@ export default function Experience() {
                   title={"NETINT Technologies Inc."}
                   description={"Co-op Firmware Engineer"}
                   date={"2020"}
-                  body={
-                    <ul>
-                      <li>
-                        Developed automated SSD benchmarks through Python and
-                        industry tools such as fio to ensure long-term
-                        performance and reliability metrics are not violated by
-                        feature commits.
-                      </li>
-                      <li>
-                        Designed and created development toolchains through
-                        regex parsing to extract and reconstruct valuable
-                        controller data, post critical failure.
-                      </li>
-                      <li>
-                        Identified, reproduced, and reported issues found in
-                        NVMe, FTL, and transcoder Jenkins validation suites
-                        through Jira tickets.
-                      </li>
-                    </ul>
-                  }
+                  body={<ul></ul>}
                 />
               </Col>
               <Col md="6">
@@ -45,11 +26,7 @@ export default function Experience() {
                   title={"SAP"}
                   description={"iXp Intern - Concur"}
                   date={"Starting September 2021"}
-                  body={
-                    <ul>
-                      <li>...</li>
-                    </ul>
-                  }
+                  body={<ul></ul>}
                 />
               </Col>
             </Col>
@@ -57,12 +34,9 @@ export default function Experience() {
         </Col>
         <Col md="6">
           <Row>
-          <h3>Skills</h3>
-
+            <h3>Skills</h3>
           </Row>
-          <Row>
-
-          </Row>
+          <Row></Row>
         </Col>
       </Row>
     </>
