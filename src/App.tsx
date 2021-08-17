@@ -17,7 +17,7 @@ function App() {
     ["Education", <Education />],
   ];
 
-  const sectionHeaders = sections.map(([header, data]) => header);
+  const sectionHeaders = sections.map(([header, ..._]) => header);
 
   return (
     <>

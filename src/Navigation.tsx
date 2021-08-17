@@ -17,7 +17,6 @@ export default function Navigation({ options }) {
               );
             })}
           </Nav>
-          <Navbar.Text>SITE WIP</Navbar.Text>
         </Navbar.Collapse>
       </Container>
     </Navbar>
