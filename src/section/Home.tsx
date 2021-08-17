@@ -14,7 +14,8 @@ export default function Home() {
             <h1 id="Home">Kyle Saburao</h1>
             <p style={{ textAlign: "justify", textJustify: "inter-word" }}>
               Student at Simon Fraser University. Years of experience developing
-              software and over a decade working with hardware. ...
+              software and over a decade working with hardware. More to be
+              written.
             </p>
           </div>
         </Col>
