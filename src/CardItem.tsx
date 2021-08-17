@@ -6,12 +6,23 @@ export default function CardItem({
   description,
   body,
   image = "",
+  imageLink = "",
   date = "",
   width = "30em",
+  height = "",
 }) {
+  const cardStyle = height === "" ? { width } : { width, height };
+
   return (
-    <Card style={{ width: width }} className="mb-3">
-      {image !== "" && <Card.Img variant="top" src={image} />}
+    <Card style={cardStyle} className="mb-3">
+      {image !== "" &&
+        (!imageLink ? (
+          <Card.Img variant="top" src={image} />
+        ) : (
+          <a href={imageLink}>
+            <Card.Img variant="top" src={image} />
+          </a>
+        ))}
       <Card.Header>
         <h4>{title}</h4>
         <p>{description}</p>
