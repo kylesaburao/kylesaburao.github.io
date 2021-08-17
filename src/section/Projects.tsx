@@ -53,7 +53,7 @@ export default function Projects() {
     ),
   ];
 
-  const maxRowCount = 3;
+  const maxRowCount = 100;
 
   return (
     <Container>
