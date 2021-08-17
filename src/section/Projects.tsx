@@ -23,7 +23,7 @@ export default function Projects() {
   const projects = [
     Project(
       "connect4web",
-      "Connect Four vs. a Pure Monte Carlo Simulation AI",
+      "You vs. a Pure Monte Carlo Simulation AI",
       connect4web,
       "https://kylesaburao.me/connect4web/"
     ),
