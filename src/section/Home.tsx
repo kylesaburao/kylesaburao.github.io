@@ -19,7 +19,7 @@ export default function Home() {
             </p>
             <Button
               variant="dark"
-              href="https://kylesaburao.github.io/downloads/Resume.pdf"
+              href="https://kylesaburao.github.io/Resume.pdf"
             >
               Resume
             </Button>
