@@ -4,9 +4,9 @@ import "./App.css";
 import Navigation from "./Navigation";
 import Education from "./section/Education";
 import Experience from "./section/Experience";
-import Technologies from "./section/Technologies";
 import Home from "./section/Home";
 import Projects from "./section/Projects";
+import Technologies from "./section/Technologies";
 
 function App() {
   const options = [
