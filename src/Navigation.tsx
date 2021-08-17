@@ -6,7 +6,7 @@ export default function Navigation({ options }) {
   return (
     <Navbar bg="dark" variant="dark" className="" fixed="top">
       <Container>
-        <Navbar.Brand href={"#home"}>Kyle Saburao</Navbar.Brand>
+        <Navbar.Brand href={"#Home"}>Kyle Saburao</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

@@ -26,13 +26,14 @@ function App() {
   return (
     <>
       <Navigation options={Object.keys(optionMap)} />
+      <span id="Home"></span>
       <Container className="pt-5 mt-4">
         {options.map(([header, component], i) => (
           <Container key={header as string} style={{ marginBottom: "4em" }}>
             {i > 0 && (
               <>
                 <Row>
-                  {header !== "Home" ? (
+                  {header !== "Home" && (
                     <h3
                       id={header as string}
                       className="text-center"
@@ -40,8 +41,6 @@ function App() {
                     >
                       {header}
                     </h3>
-                  ) : (
-                    <span id={header}></span>
                   )}
                 </Row>
                 <hr />
