@@ -9,7 +9,7 @@ import Projects from "./section/Projects";
 import Technologies from "./section/Technologies";
 
 function App() {
-  const options = [
+  const sections = [
     ["Home", <Home />],
     ["Technologies", <Technologies />],
     ["Projects", <Projects />],
@@ -17,18 +17,14 @@ function App() {
     ["Education", <Education />],
   ];
 
-  const optionMap = options.reduce((accum, [key, element]) => {
-    (accum as { string: React.ComponentType<any> })[key as string] = element;
-
-    return accum;
-  }, {} as { string: React.ComponentType<any> });
+  const sectionHeaders = sections.map(([header, data]) => header);
 
   return (
     <>
-      <Navigation options={Object.keys(optionMap)} />
+      <Navigation options={sectionHeaders} />
       <span id="Home"></span>
       <Container className="pt-5 mt-4">
-        {options.map(([header, component], i) => (
+        {sections.map(([header, component], i) => (
           <Container key={header as string} style={{ marginBottom: "4em" }}>
             {i > 0 && (
               <>
@@ -37,7 +33,7 @@ function App() {
                     <h3
                       id={header as string}
                       className="text-center"
-                      style={{ paddingTop: "2.5em", marginTop: "-2.5em" }}
+                      style={{ paddingTop: "3em", marginTop: "-3em" }}
                     >
                       {header}
                     </h3>
