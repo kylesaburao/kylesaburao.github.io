@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Card } from "react-bootstrap";
 
 export default function CardItem({
@@ -34,7 +35,11 @@ export default function CardItem({
         <p>{description}</p>
         {date !== "" && <em>{date}</em>}
       </Card.Header>
-      <Card.Body>{body}</Card.Body>
+      {body && <Card.Body>{body}</Card.Body>}
     </Card>
   );
 }
+
+CardItem.propTypes = {
+  body: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+};

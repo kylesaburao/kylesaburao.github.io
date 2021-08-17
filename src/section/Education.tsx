@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Col, Row } from "react-bootstrap";
-
+import { Col, Container, Row } from "react-bootstrap";
 import CardItem from "../CardItem";
 import sfuImage from "../img/sfu.jpg";
 

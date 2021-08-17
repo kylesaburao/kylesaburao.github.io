@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Navbar, Nav } from "react-bootstrap";
-import { isOptionalChain } from "typescript";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 export default function Navigation({ options }) {
   return (
@@ -10,14 +9,13 @@ export default function Navigation({ options }) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            {options
-              .map((option: string) => {
-                return (
-                  <Nav.Link key={option} href={`#${option}`}>
-                    {option}
-                  </Nav.Link>
-                );
-              })}
+            {options.map((option: string) => {
+              return (
+                <Nav.Link key={option} href={`#${option}`}>
+                  {option}
+                </Nav.Link>
+              );
+            })}
           </Nav>
           <Navbar.Text>SITE WIP</Navbar.Text>
         </Navbar.Collapse>
