@@ -11,7 +11,13 @@ export default function CardItem({
   width = "30em",
   height = "",
 }) {
-  const cardStyle = height === "" ? { width } : { width, height };
+  let cardStyle = {};
+  if (width) {
+    cardStyle["width"] = width;
+  }
+  if (height) {
+    cardStyle["height"] = height;
+  }
 
   return (
     <Card style={cardStyle} className="mb-3">
