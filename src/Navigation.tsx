@@ -22,6 +22,9 @@ export default function Navigation({ options, setCurrent }) {
               );
             })}
           </Nav>
+          <Nav>
+            <Nav.Link>SITE WIP</Nav.Link>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
