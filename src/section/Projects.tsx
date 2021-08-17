@@ -1,22 +1,13 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-
-import connect4web from "../img/connect4web.png";
-import connect4fast from "../img/connect4fast.png";
-import covidtracker from "../img/covidtracker.png";
-import chip8 from "../img/chip8.png";
-import pathfinder from "../img/pathfinder.png";
-import norad from "../img/norad.png";
-
 import CardItem from "../CardItem";
-
-function chunkArrayInGroups(arr: any[], size: number) {
-  var myArray: any[] = [];
-  for (var i = 0; i < arr.length; i += size) {
-    myArray.push(arr.slice(i, i + size));
-  }
-  return myArray;
-}
+import chip8 from "../img/chip8.png";
+import connect4fast from "../img/connect4fast.png";
+import connect4web from "../img/connect4web.png";
+import covidtracker from "../img/covidtracker.png";
+import norad from "../img/norad.png";
+import pathfinder from "../img/pathfinder.png";
+import chunkArrayInGroups from "../manip/arrayChunker";
 
 function Project(name, description, image, link) {
   return { name, description, image, link };
