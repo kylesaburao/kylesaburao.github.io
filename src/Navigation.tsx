@@ -4,14 +4,13 @@ import { isOptionalChain } from "typescript";
 
 export default function Navigation({ options }) {
   return (
-    <Navbar bg="dark" variant="dark" className="" fixed="top">
+    <Navbar bg="dark" variant="dark" className="" fixed="top" expand="md">
       <Container>
-        <Navbar.Brand href={"#Home"}>Kyle Saburao</Navbar.Brand>
+        <Navbar.Brand href={"#Home"}>Portfolio</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             {options
-              .filter((x) => x !== "Home")
               .map((option: string) => {
                 return (
                   <Nav.Link key={option} href={`#${option}`}>
@@ -20,9 +19,7 @@ export default function Navigation({ options }) {
                 );
               })}
           </Nav>
-          <Nav>
-            <Nav.Link>SITE WIP</Nav.Link>
-          </Nav>
+          <Navbar.Text>SITE WIP</Navbar.Text>
         </Navbar.Collapse>
       </Container>
     </Navbar>
