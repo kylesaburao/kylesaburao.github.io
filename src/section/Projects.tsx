@@ -7,7 +7,6 @@ import connect4web from "../img/connect4web.png";
 import covidtracker from "../img/covidtracker.png";
 import norad from "../img/norad.png";
 import pathfinder from "../img/pathfinder.png";
-import chunkArrayInGroups from "../manip/arrayChunker";
 
 function Project(name, description, image, link) {
   return { name, description, image, link };
@@ -53,51 +52,45 @@ export default function Projects() {
     ),
   ];
 
-  const maxRowCount = 100;
-
   return (
     <Container>
-      {chunkArrayInGroups(projects, maxRowCount).map((row, i) => {
-        return (
-          <Row key={i} className="justify-content-center">
-            {row.map((project) => {
-              return (
-                <Col
-                  key={project.name}
-                  className="text-center d-flex justify-content-around mb-4"
-                >
-                  <CardItem
-                    title={project.name}
-                    description={""}
-                    body={
-                      <Container style={{ height: "100%" }}>
-                        <Row>
-                          <Col>
-                            <p>{project.description}</p>
-                          </Col>
-                        </Row>
-                        <Row className="align-self-bottom">
-                          <Button
-                            style={{ width: "100%" }}
-                            variant="dark"
-                            href={project.link}
-                          >
-                            Visit
-                          </Button>
-                        </Row>
-                      </Container>
-                    }
-                    image={project.image}
-                    imageLink={project.link}
-                    width="20em"
-                    height="100%"
-                  />
-                </Col>
-              );
-            })}
-          </Row>
-        );
-      })}
+      <Row className="justify-content-center">
+        {projects.map((project) => {
+          return (
+            <Col
+              key={project.name}
+              className="text-center d-flex justify-content-around mb-4"
+            >
+              <CardItem
+                title={project.name}
+                description={""}
+                body={
+                  <Container style={{ height: "100%" }}>
+                    <Row>
+                      <Col>
+                        <p>{project.description}</p>
+                      </Col>
+                    </Row>
+                    <Row className="align-self-bottom">
+                      <Button
+                        style={{ width: "100%" }}
+                        variant="dark"
+                        href={project.link}
+                      >
+                        Visit
+                      </Button>
+                    </Row>
+                  </Container>
+                }
+                image={project.image}
+                imageLink={project.link}
+                width="20em"
+                height="100%"
+              />
+            </Col>
+          );
+        })}
+      </Row>
     </Container>
   );
 }
