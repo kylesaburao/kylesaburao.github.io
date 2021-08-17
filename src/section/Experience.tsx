@@ -21,7 +21,7 @@ export default function Experience() {
     <Container>
       <Row className="justify-content-center">
         {experience.map((item) => (
-          <Col className="d-flex justify-content-around">
+          <Col key={item.title} className="d-flex justify-content-around">
             <CardItem
               title={item.title}
               description={item.description}

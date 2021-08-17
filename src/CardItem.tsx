@@ -32,7 +32,7 @@ export default function CardItem({
         ))}
       <Card.Header>
         <h4>{title}</h4>
-        <p>{description}</p>
+        {description && <p>{description}</p>}
         {date !== "" && <em>{date}</em>}
       </Card.Header>
       {body && <Card.Body>{body}</Card.Body>}

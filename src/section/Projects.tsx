@@ -52,6 +52,17 @@ export default function Projects() {
     ),
   ];
 
+  const createProjectBody = (project) => {
+    return (
+      <div className="h-100 d-flex flex-column justify-content-between">
+        <p>{project.description}</p>
+        <Button variant="dark" href={project.link}>
+          Visit
+        </Button>
+      </div>
+    );
+  };
+
   return (
     <Container>
       <Row className="justify-content-center">
@@ -64,24 +75,7 @@ export default function Projects() {
               <CardItem
                 title={project.name}
                 description={""}
-                body={
-                  <Container style={{ height: "100%" }}>
-                    <Row>
-                      <Col>
-                        <p>{project.description}</p>
-                      </Col>
-                    </Row>
-                    <Row className="align-self-bottom">
-                      <Button
-                        style={{ width: "100%" }}
-                        variant="dark"
-                        href={project.link}
-                      >
-                        Visit
-                      </Button>
-                    </Row>
-                  </Container>
-                }
+                body={createProjectBody(project)}
                 image={project.image}
                 imageLink={project.link}
                 width="20em"
