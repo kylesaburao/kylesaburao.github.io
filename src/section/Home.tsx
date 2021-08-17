@@ -4,7 +4,7 @@ import "./Home.css";
 
 export default function Home() {
   return (
-    <Container>
+    <Container className="mt-4 mb-5">
       <Row className="justify-content-md-center align-items-center" id="about">
         <Col md="auto">
           <img src={portrait} alt="Portrait" className="portrait" />
