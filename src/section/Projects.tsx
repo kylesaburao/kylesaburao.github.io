@@ -65,7 +65,7 @@ export default function Projects() {
   const maxRowCount = 3;
 
   return (
-    <>
+    <Container>
       {chunkArrayInGroups(projects, maxRowCount).map((row, i) => {
         return (
           <Row key={i} className="justify-content-center">
@@ -107,6 +107,6 @@ export default function Projects() {
           </Row>
         );
       })}
-    </>
+    </Container>
   );
 }

@@ -6,14 +6,11 @@ import sfuImage from "../img/sfu.jpg";
 
 export default function Education() {
   return (
-    <>
-      <Row>
-        <h3 id="education">Education</h3>
-      </Row>
+    <Container>
       <Row className="mt-3">
         <Container>
-          <Row>
-            <Col md="auto">
+          <Row className="justify-content-center">
+            <Col md="auto" className="d-flex justify-content-around">
               <CardItem
                 title="Simon Fraser University"
                 description="B.Sc. Software Systems, School of Computing Science"
@@ -29,6 +26,6 @@ export default function Education() {
           </Row>
         </Container>
       </Row>
-    </>
+    </Container>
   );
 }

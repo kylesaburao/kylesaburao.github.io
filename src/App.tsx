@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Container from "react-bootstrap/Container";
+import { Container, Row } from "react-bootstrap";
 import "./App.css";
 import Navigation from "./Navigation";
 import Education from "./section/Education";
@@ -10,9 +10,9 @@ import Projects from "./section/Projects";
 function App() {
   const options = [
     ["Home", <Home />],
+    ["Projects", <Projects />],
     ["Experience", <Experience />],
     ["Education", <Education />],
-    ["Projects", <Projects />],
   ];
 
   const DEFAULT_OPTION = "Home";
@@ -26,8 +26,33 @@ function App() {
 
   return (
     <>
-      <Navigation options={Object.keys(optionMap)} setCurrent={setSection} />
-      <Container id="content" className="pt-5 mt-4">{optionMap[section]}</Container>
+      <Navigation options={Object.keys(optionMap)} />
+      <Container className="pt-5 mt-4">
+        {options.map(([header, component], i) => (
+          <Container key={header as string} className="mb-5">
+            {i > 0 && (
+              <>
+                <Row>
+                  {header !== "Home" ? (
+                    <h3
+                      id={header as string}
+                      className="text-center"
+                      style={{ paddingTop: "2.5em", marginTop: "-2.5em" }}
+                    >
+                      {header}
+                    </h3>
+                  ) : (
+                    <span id={header}></span>
+                  )}
+                </Row>
+                <hr />
+              </>
+            )}
+
+            <Row>{component}</Row>
+          </Container>
+        ))}
+      </Container>
     </>
   );
 }
