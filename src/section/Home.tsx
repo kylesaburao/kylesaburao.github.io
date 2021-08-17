@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Button, Container, Row, Col } from "react-bootstrap";
 import portrait from "../img/me.jpg";
 import "./Home.css";
 
@@ -17,6 +17,12 @@ export default function Home() {
               software and over a decade working with hardware. More to be
               written.
             </p>
+            <Button
+              variant="dark"
+              href="kylesaburao.github.io/downloads/Resume.pdf"
+            >
+              Resume
+            </Button>
           </div>
         </Col>
       </Row>
