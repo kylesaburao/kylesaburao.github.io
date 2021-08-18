@@ -7,6 +7,7 @@ import docker from "../img/icons/docker.png";
 import gcp from "../img/icons/gcp.svg";
 import git from "../img/icons/git.svg";
 import go from "../img/icons/go.svg";
+import java from "../img/icons/java.svg";
 import javascript from "../img/icons/javascript.png";
 import python from "../img/icons/python.svg";
 import react from "../img/icons/react.svg";
@@ -24,6 +25,7 @@ export default function Technologies() {
       javascript,
       python,
       cpp,
+      java,
       go,
       regex,
       docker,
