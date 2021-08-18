@@ -9,7 +9,7 @@ import norad from "../img/norad.png";
 import pathfinder from "../img/pathfinder.png";
 import tracker from "../img/tracker.png";
 
-function Project(name, description, image, link) {
+function Project(name, description, image, link = "") {
   return { name, description, image, link };
 }
 
@@ -18,8 +18,7 @@ export default function Projects() {
     Project(
       "Canada COVID Tracker",
       "COVID-19 Tracker for Canadian Provinces",
-      covidtracker,
-      "https://github.com/kylesaburao/covid-tracker"
+      covidtracker
     ),
     Project(
       "connect4web",
@@ -36,8 +35,7 @@ export default function Projects() {
     Project(
       "COVID Report",
       "User-uploaded report tracking and management for local COVID data",
-      tracker,
-      ""
+      tracker
     ),
     Project(
       "connect4fast",
@@ -54,8 +52,7 @@ export default function Projects() {
     Project(
       "Pathfinding Turtle",
       "Let a turtle figure out approximate solutions to the travelling salesman problem",
-      pathfinder,
-      "https://github.com/kylesaburao/PathfindingTurtle"
+      pathfinder
     ),
   ];
 
