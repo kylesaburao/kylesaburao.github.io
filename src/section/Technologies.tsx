@@ -12,22 +12,24 @@ import python from "../img/icons/python.svg";
 import react from "../img/icons/react.svg";
 import regex from "../img/icons/regex.svg";
 import typescript from "../img/icons/typescript.svg";
+import wireguard from "../img/icons/wireguard.svg";
 import chunkArrayInGroups from "../manip/arrayChunker";
 
 export default function Technologies() {
   const images = chunkArrayInGroups(
     [
-      python,
       react,
       angular,
       typescript,
       javascript,
+      python,
       cpp,
-      docker,
+      go,
       regex,
+      docker,
+      wireguard,
       gcp,
       git,
-      go,
       android,
     ],
     8
@@ -43,7 +45,7 @@ export default function Technologies() {
                 key={image}
                 className="text-center d-flex justify-content-around mb-4"
               >
-                <img height="50px" className="mb-4" src={image} alt={image} />
+                <img height="60px" className="mb-4" src={image} alt={image} />
               </Col>
             ))}{" "}
           </Row>
