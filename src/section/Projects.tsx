@@ -7,6 +7,7 @@ import connect4web from "../img/connect4web.png";
 import covidtracker from "../img/covidtracker.png";
 import norad from "../img/norad.png";
 import pathfinder from "../img/pathfinder.png";
+import tracker from "../img/tracker.png";
 
 function Project(name, description, image, link) {
   return { name, description, image, link };
@@ -16,7 +17,7 @@ export default function Projects() {
   const projects = [
     Project(
       "Canada COVID Tracker",
-      "A COVID-19 Tracker for Canadian Provinces",
+      "COVID-19 Tracker for Canadian Provinces",
       covidtracker,
       "https://github.com/kylesaburao/covid-tracker"
     ),
@@ -31,6 +32,12 @@ export default function Projects() {
       "Effective solution to communicate events and expect rapid acknowledgement",
       norad,
       "https://devpost.com/software/norad-intel"
+    ),
+    Project(
+      "COVID Report",
+      "User-uploaded report tracking and management for local COVID data",
+      tracker,
+      ""
     ),
     Project(
       "connect4fast",
@@ -56,9 +63,11 @@ export default function Projects() {
     return (
       <div className="h-100 d-flex flex-column justify-content-between">
         <p>{project.description}</p>
-        <Button variant="dark" href={project.link}>
-          Visit
-        </Button>
+        {project.link && (
+          <Button variant="dark" href={project.link}>
+            Visit
+          </Button>
+        )}
       </div>
     );
   };
