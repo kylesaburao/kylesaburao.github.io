@@ -6,6 +6,7 @@ import connect4fast from "../img/connect4fast.png";
 import connect4web from "../img/connect4web.png";
 import covidtracker from "../img/covidtracker.png";
 import norad from "../img/norad.png";
+import frc from "../img/frc.jpg";
 import pathfinder from "../img/pathfinder.png";
 import tracker from "../img/tracker.png";
 
@@ -18,7 +19,8 @@ export default function Projects() {
     Project(
       "Canada COVID Tracker",
       "COVID-19 Tracker for Canadian Provinces",
-      covidtracker
+      covidtracker,
+      "https://github.com/kylesaburao/covid-tracker"
     ),
     Project(
       "connect4web",
@@ -53,6 +55,12 @@ export default function Projects() {
       "Pathfinding Turtle",
       "Let a turtle figure out approximate solutions to the travelling salesman problem",
       pathfinder
+    ),
+    Project(
+      "FRC Loader",
+      "150 lbs heavy-duty autonomous ball transporter",
+      frc,
+      "http://lamrobotics.weebly.com/2017-event-info.html"
     ),
   ];
 
