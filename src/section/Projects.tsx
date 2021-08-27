@@ -5,8 +5,9 @@ import chip8 from "../img/chip8.png";
 import connect4fast from "../img/connect4fast.png";
 import connect4web from "../img/connect4web.png";
 import covidtracker from "../img/covidtracker.png";
-import norad from "../img/norad.png";
+import cradle from "../img/cradle.png";
 import frc from "../img/frc.jpg";
+import norad from "../img/norad.png";
 import pathfinder from "../img/pathfinder.png";
 import tracker from "../img/tracker.png";
 
@@ -38,6 +39,11 @@ export default function Projects() {
       "COVID Report",
       "User-uploaded report tracking and management for local COVID data",
       tracker
+    ),
+    Project(
+      "CRADLE VSA Support",
+      "Digital record keeping for the CRADLE VSA system",
+      cradle
     ),
     Project(
       "connect4fast",
