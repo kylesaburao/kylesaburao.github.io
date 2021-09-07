@@ -8,12 +8,12 @@ export default function Experience() {
     {
       title: "SAP",
       description: "Concur iXp Intern",
-      date: "Starting September 2021",
+      date: "September 2021 -",
     },
     {
       title: "NETINT Technologies Inc.",
       description: "Co-op Firmware Engineer",
-      date: "2020",
+      date: "January 2020 (8 months)",
     },
   ];
 
