@@ -8,7 +8,7 @@ export default function Experience() {
     {
       title: "SAP",
       description: "Concur iXp Intern",
-      date: "September 2021 -",
+      date: "September 2021 - Now",
     },
     {
       title: "NETINT Technologies Inc.",
