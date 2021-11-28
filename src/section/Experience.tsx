@@ -7,7 +7,7 @@ export default function Experience() {
   const experience = [
     {
       title: "SAP",
-      description: "Concur iXp Intern",
+      description: "iXp Intern - Concur Travel Software Engineer",
       date: "September 2021 - Now",
     },
     {
