@@ -58,7 +58,7 @@ jobs:
           name: build-artifacts
           path: build/
 
-      - run: ls alt
+      - run: ls -alt
 
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v2
