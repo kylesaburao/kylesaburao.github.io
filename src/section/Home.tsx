@@ -17,12 +17,6 @@ export default function Home() {
               software and over a decade working with hardware. More to be
               written.
             </p>
-            <Button
-              variant="dark"
-              href="https://kylesaburao.github.io/Resume.pdf"
-            >
-              Resume
-            </Button>
           </div>
         </Col>
       </Row>
