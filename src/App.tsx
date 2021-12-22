@@ -12,8 +12,8 @@ function App() {
   const sections = [
     ["Home", <Home />],
     ["Technologies", <Technologies />],
-    ["Projects", <Projects />],
     ["Experience", <Experience />],
+    ["Projects", <Projects />],
     ["Education", <Education />],
   ];
 
