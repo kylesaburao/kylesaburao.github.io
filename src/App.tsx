@@ -11,8 +11,8 @@ import Technologies from "./section/Technologies";
 function App() {
   const sections = [
     ["Home", <Home />],
-    ["Technologies", <Technologies />],
     ["Experience", <Experience />],
+    ["Technologies", <Technologies />],
     ["Projects", <Projects />],
     ["Education", <Education />],
   ];
