@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import githubIcon from "./img/icons/github.png";
 
 export default function Navigation({ options }) {
   return (
@@ -16,6 +17,11 @@ export default function Navigation({ options }) {
                 </Nav.Link>
               );
             })}
+          </Nav>
+          <Nav>
+            <Nav.Link href="https://github.com/kylesaburao">
+              <img src={githubIcon} width="25px" alt="GitHub" />
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
