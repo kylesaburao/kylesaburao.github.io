@@ -22,12 +22,12 @@ export default function Experience() {
     MakeWorkExperience(
       "SAP",
       "iXp Intern - Concur Travel Software Engineer",
-      "September 2021 - Current"
+      "September 2021 - April 2022"
     ),
     MakeWorkExperience(
       "NETINT Technologies Inc.",
       "Co-op Firmware Engineer",
-      "January 2020 (8 months)"
+      "January 2020 - August 2020"
     ),
   ];
 
