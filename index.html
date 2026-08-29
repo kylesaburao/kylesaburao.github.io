@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script defer>
       const options = [
-        'Tracking your visit...',
-        'Monitoring your activity...',
-        'Noting your presence...',
-        'Correlating your profile...',
-        'Assessing your activity...'
+        'Tracking visit...',
+        'Assessing activity...',
       ];
 
       const searchParams = new URLSearchParams(window.location.search);
       if (searchParams.getAll('fbclid').some((value) => value !== '')) {
-        options.push('Tracing visit from Instagram...');
+        options.push(
+          'Tracing visit from Instagram...',
+          'Tracing visit from Instagram...'
+        );
       }
 
       const selected = options[Math.floor(Math.random() * options.length)];
